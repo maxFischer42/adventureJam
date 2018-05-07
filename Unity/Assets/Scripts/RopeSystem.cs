@@ -15,12 +15,16 @@ public class RopeSystem : MonoBehaviour {
     private Vector2 playerPosition;
     private Rigidbody2D ropeHingeAnchorRb;
     private SpriteRenderer ropeHingeAnchorSprite;
+    public bool retractable;
 
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
-    private float ropeMaxCastDistance = 20f;
+    public float ropeMaxCastDistance = 20f;
     private List<Vector2> ropePositions = new List<Vector2>();
     private bool distanceSet;
+    private float currlength;
+    public float maxlength;
+    private Vector2 aimDir;
 
     void Awake()
     {
@@ -44,13 +48,15 @@ public class RopeSystem : MonoBehaviour {
 
         
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
-        
+        Vector2 cross = aimDirection - transform.position;
         playerPosition = transform.position;
+        aimDir = aimDirection;
 
-        
         if (!ropeAttached)
         {
             SetCrosshairPosition(aimAngle);
+           
+
         }
         else
         {
@@ -58,6 +64,17 @@ public class RopeSystem : MonoBehaviour {
         }
         HandleInput(aimDirection);
         UpdateRopePositions();
+
+        if (playerMovement.isSwinging == true)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                float foo = gameObject.GetComponent<DistanceJoint2D>().distance;// -= 0.05f;
+                foo -= 0.05f;
+                gameObject.GetComponent<DistanceJoint2D>().distance = foo;
+            }
+
+        }
     }
 
     private void SetCrosshairPosition(float aimAngle)
@@ -71,8 +88,12 @@ public class RopeSystem : MonoBehaviour {
         var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
 
         var crossHairPosition = new Vector3(x, y, 0);
+ 
         crosshair.transform.position = crossHairPosition;
+        playerMovement.isSwinging = true;
+
     }
+
 
 
     
@@ -83,7 +104,7 @@ public class RopeSystem : MonoBehaviour {
             
             if (ropeAttached) return;
             ropeRenderer.enabled = true;
-
+            currlength = maxlength;
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
 
             
@@ -116,7 +137,7 @@ public class RopeSystem : MonoBehaviour {
         }
     }
 
-    
+
     private void ResetRope()
     {
         ropeJoint.enabled = false;
@@ -137,7 +158,7 @@ public class RopeSystem : MonoBehaviour {
             return;
         }
 
-       
+
         ropeRenderer.positionCount = ropePositions.Count + 1;
 
         

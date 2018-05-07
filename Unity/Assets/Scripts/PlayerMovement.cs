@@ -38,10 +38,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isSwinging;
     private SpriteRenderer playerSprite;
     private Rigidbody2D rBody;
-    private bool isJumping;
+    public bool isJumping;
  //   private Animator animator;
     private float jumpInput;
     private float horizontalInput;
+
 
     void Awake()
     {
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
           //  animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
             playerSprite.flipX = horizontalInput < 0f;
 
-            if (groundCheck)
+          //  if (groundCheck)
             {
                 var groundForce = speed * 2f;
                 rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
@@ -77,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
            // animator.SetFloat("Speed", 0f);
         }
 
-        if (!groundCheck) return;
+          if (!groundCheck) return;
 
         isJumping = jumpInput > 0f;
         if (isJumping)
