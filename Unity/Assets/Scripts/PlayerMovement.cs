@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
  //   private Animator animator;
     private float jumpInput;
     private float horizontalInput;
+    bool ropeAttatched;
 
 
     void Awake()
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        ropeAttatched = GetComponent<RopeSystem>().ropeAttached;
         jumpInput = Input.GetAxis("Jump");
         horizontalInput = Input.GetAxis("Horizontal");
         var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
@@ -65,25 +67,36 @@ public class PlayerMovement : MonoBehaviour
         {
           //  animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
             playerSprite.flipX = horizontalInput < 0f;
-
-          //  if (groundCheck)
+            if (groundCheck)
             {
+                
                 var groundForce = speed * 2f;
-                rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
-                rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
+                if (!ropeAttatched)
+                {
+                    rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
+                }
+                else
+                {
+                    rBody.velocity += rBody.velocity * 0.01f; 
+                    rBody.AddForce(new Vector2(((horizontalInput * groundForce - rBody.velocity.x) * groundForce) * 0.1f, 0));
+                }
+
+                //rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
             }
         }
         else
         {
-           // animator.SetFloat("Speed", 0f);
+            // animator.SetFloat("Speed", 0f);
+           
         }
 
-          if (!groundCheck) return;
+          if (!GetComponent<playerAnimator>().grounded) return;
 
         isJumping = jumpInput > 0f;
         if (isJumping)
         {
             rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
+            
         }
     }
 }

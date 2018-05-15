@@ -26,6 +26,10 @@ public class flail : MonoBehaviour {
             }
 
         }
+        if(!inRange && Input.GetKeyDown(KeyCode.R))
+        {
+            flailObj.transform.SetPositionAndRotation(new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+        }
      }
 
 

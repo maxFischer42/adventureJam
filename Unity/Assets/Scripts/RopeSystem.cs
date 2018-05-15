@@ -11,7 +11,7 @@ public class RopeSystem : MonoBehaviour {
     public Transform crosshair;
     public SpriteRenderer crosshairSprite;
     public PlayerMovement playerMovement;
-    private bool ropeAttached;
+    public bool ropeAttached;
     private Vector2 playerPosition;
     private Rigidbody2D ropeHingeAnchorRb;
     private SpriteRenderer ropeHingeAnchorSprite;
@@ -106,14 +106,19 @@ public class RopeSystem : MonoBehaviour {
             ropeRenderer.enabled = true;
             currlength = maxlength;
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
-
             
+
             if (hit.collider != null)
             {
+                if (hit.collider.tag == "slimy")
+                {
+                    return;
+                }
                 ropeAttached = true;
                 if (!ropePositions.Contains(hit.point))
                 {
                     
+                     
                     // Jump slightly to distance the player a little from the ground after grappling to something.
                     transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
                     ropePositions.Add(hit.point);
