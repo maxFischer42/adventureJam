@@ -1,0 +1,5 @@
+Obtained the Mysterious Orb!
+Press E to equip the orb!
+Move the mouse to move the flail in the direction of the mouse
+The flail will stop working if it goes too far away from you.
+If that happens, press R to reset the flail.

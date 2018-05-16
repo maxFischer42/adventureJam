@@ -26,6 +26,8 @@ public class RopeSystem : MonoBehaviour {
     public float maxlength;
     private Vector2 aimDir;
 
+    public AudioClip aud;
+
     void Awake()
     {
         ropeJoint.enabled = false;
@@ -81,6 +83,7 @@ public class RopeSystem : MonoBehaviour {
     {
         if (!crosshairSprite.enabled)
         {
+            
             crosshairSprite.enabled = true;
         }
 
@@ -91,6 +94,7 @@ public class RopeSystem : MonoBehaviour {
  
         crosshair.transform.position = crossHairPosition;
         playerMovement.isSwinging = true;
+        
 
     }
 
@@ -117,10 +121,10 @@ public class RopeSystem : MonoBehaviour {
                 ropeAttached = true;
                 if (!ropePositions.Contains(hit.point))
                 {
-                    
-                     
+                    GetComponent<AudioSource>().PlayOneShot(aud);
+
                     // Jump slightly to distance the player a little from the ground after grappling to something.
-                    transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
+                  //  transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
                     ropePositions.Add(hit.point);
                     ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
                     ropeJoint.enabled = true;
@@ -130,6 +134,7 @@ public class RopeSystem : MonoBehaviour {
             
             else
             {
+                GetComponent<AudioSource>().PlayOneShot(aud);
                 ropeRenderer.enabled = false;
                 ropeAttached = false;
                 ropeJoint.enabled = false;
@@ -143,7 +148,7 @@ public class RopeSystem : MonoBehaviour {
     }
 
 
-    private void ResetRope()
+    public void ResetRope()
     {
         ropeJoint.enabled = false;
         ropeAttached = false;

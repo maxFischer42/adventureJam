@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212300038254663958}
   - component: {fileID: 61183961091110802}
   - component: {fileID: 114637849732843210}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,15 +82,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717879312382996}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.157333, y: 13.399944, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70585036, w: 0.708361}
+  m_LocalPosition: {x: 33.157333, y: 18.9, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4047588654949646}
   - {fileID: 4565842001768928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.797005}
 --- !u!4 &4565842001768928
 Transform:
   m_ObjectHideFlags: 1
@@ -3718,7 +3718,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -8251,7 +8251,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

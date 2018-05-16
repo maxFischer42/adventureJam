@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (rBody.velocity.y <= -6)
+            rBody.velocity = new Vector2(rBody.velocity.x, -6);
         if (horizontalInput < 0f || horizontalInput > 0f)
         {
           //  animator.SetFloat("Speed", Mathf.Abs(horizontalInput));

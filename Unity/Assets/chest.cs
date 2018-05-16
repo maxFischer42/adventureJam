@@ -19,25 +19,43 @@ public class chest : MonoBehaviour {
     public GameObject dis1_;
     public GameObject dis2_;
     public Behaviour deh1_;
-    public Behaviour deh2_;
+    public LineRenderer deh2_;
     public Behaviour deh3_;
-
+   public bool isFlail = false;
     private void Update()
     {
-        if (!update_) return;
-        dialouge_.SetActive(true);
-        timer++;
-        obj1_.SetActive(true);
-        obj2_.SetActive(true);
-        beh1_.enabled = true;
-        beh2_.enabled = true;
-        beh3_.enabled = true;
+        if (!isFlail)
+        {
+            if (!update_) return;
+            dialouge_.SetActive(true);
+            timer++;
+            obj1_.SetActive(true);
+            obj2_.SetActive(true);
+            beh1_.enabled = true;
+            beh2_.enabled = true;
+            beh3_.enabled = true;
+        }
+        else
+        {
+            if (!update_) return;
+            dialouge_.SetActive(true);
+            timer++;
+            obj1_.SetActive(true);
+           
+            beh1_.enabled = true;
+            deh1_.enabled = false;
+            deh2_.enabled = false;
+            deh3_.enabled = false;
+            dis1_.SetActive(false);
+            dis2_.SetActive(false);
+            beh3_.enabled = true;
+        }
         if(timer > 400)
         {
 
 
             GameObject.Find("Player").gameObject.GetComponent<PlayerMovement>().enabled = true;
-            enabled = false;
+            Destroy(gameObject, 2f);
         }
     }
 

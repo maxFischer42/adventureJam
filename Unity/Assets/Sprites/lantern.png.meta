@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: a34844fb3086c6e4bab1c559e4cb3f8b
+guid: e898043c3ea27cd4ea9d58ea9ffac612
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Magic_0
-    21300002: Magic_1
-    21300004: Magic_2
-    21300006: Magic_3
-    21300008: Magic_4
+    21300000: lantern_0
+    21300002: lantern_1
+    21300004: lantern_2
+    21300006: lantern_3
+    21300008: lantern_4
+    21300010: lantern_5
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -89,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Magic_0
+      name: lantern_0
       rect:
         serializedVersion: 2
         x: 0
@@ -103,13 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c5d0143da8b3d458f360d3f083abef
+      spriteID: 2c9fe7564424cb449b099ddd2fb12247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magic_1
+      name: lantern_1
       rect:
         serializedVersion: 2
         x: 160
@@ -123,13 +124,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04c161c6936824469200c2ab304c3e1
+      spriteID: 1e14d7de65a48554aa3e9e93d9369643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magic_2
+      name: lantern_2
       rect:
         serializedVersion: 2
         x: 0
@@ -143,13 +144,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2bf7729c6727ae4db839815fe3b3283
+      spriteID: 64ff13b71bb6ff541ad2dfa9e474bda6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magic_3
+      name: lantern_3
       rect:
         serializedVersion: 2
         x: 160
@@ -163,13 +164,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e9480333aedd6040a64cdb52ce7a8fd
+      spriteID: b2a7d721a5b65bb4ea9efad70430354f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magic_4
+      name: lantern_4
       rect:
         serializedVersion: 2
         x: 0
@@ -183,7 +184,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8c6671c0244f0840b505e4f7a0393d9
+      spriteID: 7582b0f4b2411cd489d845a0b2e3b66d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lantern_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd72d4a47da6d149a0054feab3b54fb
       vertices: []
       indices: 
       edges: []
@@ -191,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6c67f6f85465cda4eaa7942a52e702d3
+    spriteID: 52ceacaf00f87734d933838c70829399
     vertices: []
     indices: 
     edges: []

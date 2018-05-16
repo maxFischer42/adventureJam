@@ -3,7 +3,14 @@ guid: 8eaf2f037b4d29b459fbaaa3110a9f25
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ropeHingeAnchor: {instanceID: 0}
+  - ropeJoint: {instanceID: 0}
+  - crosshair: {instanceID: 0}
+  - crosshairSprite: {instanceID: 0}
+  - playerMovement: {instanceID: 0}
+  - ropeRenderer: {instanceID: 0}
+  - aud: {fileID: 8300000, guid: d67639432ce29084089fc3e5ab7b2a87, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
