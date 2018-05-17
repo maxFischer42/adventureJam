@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/opening.unity
+    guid: 141b6ca836359114bbc1c4df6e345650
+  - enabled: 1
+    path: Assets/Scenes/title.unity
+    guid: 7f2d1116b42b30540bb133ef18cf27db
+  - enabled: 1
     path: Assets/Scenes/level0.unity
     guid: 69c0556b5285be6429f62952d1f9b011
   - enabled: 1
@@ -32,4 +38,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level6.unity
     guid: 6a15f0d986f8e71488e7e887b1e8cf36
+  - enabled: 1
+    path: Assets/Scenes/level3-1.unity
+    guid: 45eabcd7a2bee53409a9f8476c2cc461
+  - enabled: 1
+    path: Assets/Scenes/level3-2.unity
+    guid: f18e25ea042c29d49a0e81765b3ebb43
+  - enabled: 1
+    path: Assets/Scenes/level7.unity
+    guid: a2b4f5d7b1a899d498a0b812775efe74
+  - enabled: 1
+    path: Assets/Scenes/level2-1.unity
+    guid: b048719642805454d9c98576b1b10292
+  - enabled: 1
+    path: Assets/Scenes/level2-2.unity
+    guid: 7a30dff7fb8496c48b6d5e5a22bc8d92
+  - enabled: 1
+    path: Assets/Scenes/boss.unity
+    guid: 79fe52166bb944c419678409e35d0019
+  - enabled: 1
+    path: Assets/Scenes/epilouge.unity
+    guid: e1983f355d4db124294e29d15b47bfaa
   m_configObjects: {}

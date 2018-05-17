@@ -24,20 +24,28 @@ public class slime : MonoBehaviour {
 
         timer += Time.deltaTime;
         Rigidbody2D rig = GetComponent<Rigidbody2D>();
-        GetComponent<SpriteRenderer>().flipX = !direction;
-        if(direction)
+        if (!GameObject.FindObjectOfType<bossEmit>())
         {
-            rig.velocity = new Vector2(-speed, 0);
+            GetComponent<SpriteRenderer>().flipX = !direction;
+            if (direction)
+            {
+                rig.velocity = new Vector2(-speed, 0);
+            }
+            else if (!direction)
+            {
+                rig.velocity = new Vector2(speed, 0);
+            }
+            if (timer >= target)
+            {
+                timer = 0;
+                target = Random.Range(timr.x, timr.y);
+                direction = !direction;
+            }
         }
-        else if(!direction)
+        else
         {
-            rig.velocity = new Vector2(speed, 0);
-        }
-        if(timer >= target)
-        {
-            timer = 0;
-            target = Random.Range(timr.x, timr.y);
-            direction = !direction;
+            Vector2 dir = GameObject.Find("Player").transform.position - transform.position;
+            rig.velocity = dir * speed / 4;
         }
 
             
@@ -50,7 +58,10 @@ public class slime : MonoBehaviour {
             GameObject corpse;
             corpse = (GameObject)Instantiate(destroyed, transform);
             corpse.transform.SetParent(null);
-          
+          if(GameObject.FindObjectOfType<bossEmit>())
+            {
+                GameObject.FindObjectOfType<bossEmit>().GetComponent<bossEmit>().numOfSlimes--;
+            }
             Destroy(gameObject);
         }
     }

@@ -41041,6 +41041,7 @@ GameObject:
   - component: {fileID: 1572678820}
   - component: {fileID: 1572678819}
   - component: {fileID: 1572678824}
+  - component: {fileID: 1572678825}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -41231,6 +41232,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1572678825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1572678818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 779ff8f3e90355a458f3d64d78f2af37, type: 2}
 --- !u!1 &1680758021
 GameObject:
   m_ObjectHideFlags: 0
@@ -41268,7 +41281,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3dfecf7e7f5ee9e4799accdeb08ce5ee, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
